@@ -2,31 +2,37 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  align-self: center;
   font-family: "Lexend Deca", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: hsl(0, 0%, 95%);
+}
+
 .General-Container {
   display: flex;
   flex-direction: column;
-  justify-self: center;
   align-items: center;
-  height: 100%;
   width: 100%;
-  max-width: 70%;
-  margin: 25vh;
+  max-width: 920px;
+  padding: 40px 24px;
+}
+
+.attribution {
+  margin-top: 32px;
 }
 
 .Box {
   display: flex;
   flex-direction: row;
-  height: 100%;
   width: 100%;
-  height: 50vh;
-  /* border: 2px solid red; */
+  min-height: 500px;
   border-radius: 1em;
   overflow: hidden;
 }
@@ -36,38 +42,34 @@ h2 {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-size: 30px;
-  margin-top: -60px;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 /* SEDAN SECTION   */
 
 .Sedan {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100%;
+  flex: 1;
   width: 100%;
   background-color: hsl(31, 77%, 52%);
   color: hsl(0, 0%, 95%);
 }
 
 .Sedan div {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  justify-content: center;
-  align-content: center;
-  /* border: 2px solid red; */
-  height: 90%;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 48px;
 }
 
 .Sedan p {
   color: hsla(0, 0%, 100%, 0.75);
-  width: 220px;
-  gap: 20px;
+  margin-top: 32px;
   line-height: 1.6;
-  margin-top: -50px;
 }
 
 .Sedan button {
@@ -77,7 +79,7 @@ h2 {
   border: none;
   font-size: small;
   font-weight: 600;
-  margin-bottom: -30px;
+  margin-top: auto;
   color: hsl(31, 77%, 52%);
 }
 
@@ -87,29 +89,24 @@ h2 {
 
 .Suv {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100%;
+  flex: 1;
   width: 100%;
   background-color: hsl(184, 100%, 22%);
   color: hsl(0, 0%, 95%);
 }
 
 .Suv div {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  justify-content: center;
-  align-content: center;
-  /* border: 2px solid red; */
-  height: 90%;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 48px;
 }
 .Suv p {
   color: hsla(0, 0%, 100%, 0.75);
-  width: 220px;
-  gap: 20px;
+  margin-top: 32px;
   line-height: 1.6;
-  margin-top: -60px;
 }
 
 .Suv button {
@@ -119,7 +116,7 @@ h2 {
   border: none;
   font-size: small;
   font-weight: 600;
-  margin-bottom: -30px;
+  margin-top: auto;
   color: hsl(184, 100%, 22%);
 }
 
@@ -129,29 +126,24 @@ h2 {
 
 .Luxury {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
+  justify-content: center;
+  flex: 1;
   width: 100%;
   background-color: hsl(179, 100%, 13%);
   color: hsl(0, 0%, 95%);
 }
 
 .Luxury div {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  justify-content: center;
-  align-content: center;
-  /* border: 2px solid red; */
-  height: 90%;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 48px;
 }
 .Luxury p {
   color: hsla(0, 0%, 100%, 0.75);
-  width: 220px;
-  gap: 20px;
+  margin-top: 32px;
   line-height: 1.6;
-  margin-top: -60px;
 }
 
 .Luxury button {
@@ -161,8 +153,69 @@ h2 {
   border: none;
   font-size: small;
   font-weight: 600;
-  margin-bottom: -30px;
+  margin-top: auto;
   color: hsl(179, 100%, 13%);
 }
 
+button {
+  cursor: pointer;
+}
+
+img {
+  margin-bottom: 36px;
+}
 /* LUXURY SECTION  */
+
+@media (max-width: 768px) {
+  .General-Container {
+    max-width: 90%;
+    margin: 60px auto;
+  }
+
+  .Box {
+    flex-direction: column;
+    height: auto;
+    border-radius: 0.7em;
+  }
+
+  .Sedan,
+  .Suv,
+  .Luxury {
+    min-height: 440px;
+  }
+
+  .Sedan div,
+  .Suv div,
+  .Luxury div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 28px;
+    width: min(80%, 300px);
+    height: auto;
+    padding: 48px 0;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 32px;
+  }
+
+  .Sedan p,
+  .Suv p,
+  .Luxury p {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .Sedan button,
+  .Suv button,
+  .Luxury button {
+    margin-bottom: 0;
+  }
+
+  .attribution {
+    padding: 0 20px;
+  }
+}
